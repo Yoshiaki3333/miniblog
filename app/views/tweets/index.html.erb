@@ -1,0 +1,52 @@
+ <div class="tweet-area">
+        <% unless user_signed_in? %>
+            <h2 class="top_message">ようこそ！早速登録して投稿してみよう</h2>
+            <nav class="global-nav">
+                <ul>
+                    <li class="menu_btn_top">
+                      <%= link_to 'ログイン', new_user_session_path, method: :get %>
+                    </li>
+                    <li class="menu_btn_top">
+                         <%= link_to '新規登録', new_user_registration_path, method: :get %>
+                    </li>
+                </ul>
+            </nav>
+        <% else %> 
+        <% @tweets.each do |tweet| %>
+            <div class="tweet-box">
+                <%= simple_format(tweet.text) %>
+                <% if tweet.comments && tweet.comments.count != 0  %>
+                    <a href="/tweets/<%= tweet.id %>">
+                        <strong><%= tweet.comments.count %>件</strong>
+                    </a>のコメント
+                <% elsif tweet.comments.count == 0 && tweet.user.id != current_user.id %>
+                    ※コメントをしてみよう！
+                <% end %>
+                
+                 <span class="name">
+                    <p><<投稿者>></p>
+                    <strong>
+                        <a href="/users/<%= tweet.user.id %>">
+                            <%= tweet.user.nickname %>
+                        </a>
+                    </strong>
+                </span>
+                
+                <ul class="btn-area">
+                    <li class="btn">
+                        <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
+                    </li>
+                <% if user_signed_in? && tweet.user.id == current_user.id %>
+                    <li class="btn">
+                        <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+                    </li>
+                    <li class="btn">
+                        <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+                    </li>
+                </ul>
+                <% end %>
+            </div>
+        <% end %>
+        <%= paginate(@tweets) %>
+        <% end %>
+</div>   

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiniBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="title"><a href="/">MiniBlog</a></h1>
+      <% if user_signed_in? %>
+        <div class="current_user name">
+          <strong><%= current_user.nickname %>さん</strong>
+      </div>
+      <% end %>
+      <ul class="user_menu">
+        <% if user_signed_in? %>
+        <li class="menu_btn">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </li>
+        <li class="menu_btn">
+          <%= link_to '投稿する', '/tweets/new', method: :get %>
+        </li>
+        <li class="menu_btn">
+          <%= link_to 'マイページ', "/users/#{current_user.id}}", method: :get %>
+        </li>
+      </ul>
+      <% end %>
+    </header>
+    <div class="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+

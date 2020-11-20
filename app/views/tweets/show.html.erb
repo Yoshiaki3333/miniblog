@@ -1,0 +1,43 @@
+　　<div class="tweet-box">
+        <%= simple_format(@tweet.text) %>
+            <span class="name">
+                        <p><<投稿者>></p>
+                <a href="/users/<%= @tweet.user.id %>">
+                    <strong><%= @tweet.user.nickname %></strong>
+                </a>
+            </span>
+        <% if user_signed_in? && @tweet.user.id == current_user.id %>
+            <ul class="btn-area">
+                <li class="btn">
+                        <%= link_to '詳細', "/tweets/#{@tweet.id}", method: :get %>
+                </li>
+                <li class="btn">
+                        <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
+                </li>
+                <li class="btn">
+                        <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+                </li>
+            </ul>
+        <% end %>
+    </div>
+    <div class="comment-box">
+        <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
+            <textarea class="comment-text" name="text" placeholder="コメントを投稿する"></textarea>
+            <input class="post-btn" type="submit" value="投稿する">
+        <% end %>
+    </div>
+    <% if @comments %>
+        <div class="comment-index">
+        <p><<コメント一覧>></P>
+        <% @comments.each do |comment| %>
+            <p>
+                <strong><%= link_to "#{comment.user.nickname}", "/users/#{comment.user.id}", method: :get %></strong> : 
+                <%= comment.text %>
+                <% if comment.user.id == current_user.id %>
+                    <%= link_to '削除',"/tweets/#{@tweet.id}/comments/#{comment.id}", method: :delete %>
+                <% end %>
+            </p>
+        <% end %>
+        </div>
+    <% end %>
+        

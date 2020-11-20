@@ -1,0 +1,9 @@
+<div class="tweet-form">
+    <%= form_tag('/tweets', method: :post) do %>
+        <h3>
+            投稿する
+        </h3>
+        <textarea class="tweet-text" name="text" placeholder="文章を投稿してみよう。"></textarea>
+        <input class="post-btn" type="submit" value="投稿する">
+    <% end %>
+</div>
