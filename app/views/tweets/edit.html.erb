@@ -1,5 +1,5 @@
 <div class="tweet-form">
-    <%= form_tag('/tweets', method: :post) do %>
+    <%= form_tag("/tweets/#{@tweet.id}", method: :patch) do %>
         <textarea class="tweet-text" name="text" placeholder=text><%= @tweet.text %></textarea>
         <input class="post-btn" type="submit" value="投稿する">
     <% end %>
