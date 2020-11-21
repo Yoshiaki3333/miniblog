@@ -57,7 +57,17 @@ h2.top_message {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;
+  position: relative;
 }
+.timeline {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 380px;
+}
+
 .menu_btn {
  margin: 0 30px;
  background-color: #fff;
