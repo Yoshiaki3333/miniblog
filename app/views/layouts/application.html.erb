@@ -13,7 +13,11 @@
     <header class="header">
       <h1 class="title"><a href="/">MiniBlog</a></h1>
       <% if user_signed_in? %>
-        
+        <div class="current_user name">
+          <strong><%= current_user.nickname %>さん</strong>
+        </div> <li class="timeline">
+          <%= link_to 'タイムライン', "/tweets", method: :get %> 
+        </li>
       <ul class="user_menu">
        
         <li class="menu_btn">
