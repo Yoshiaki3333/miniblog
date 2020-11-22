@@ -123,21 +123,53 @@ h2.top_message {
   text-align: center;
   display: flex;
   justify-content: center; 
-  align-items: center;  
+  align-items: center; 
+  position: relative;
 }
-.btn {
+.show-btn {
+  position: absolute;
+  left: 0;
   width: 80px;
-  margin: 10px auto;
   background-color: #14293e;
   padding: 10px 10px;
   border-radius: 8px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
 }
+
+.edit-btn {
+  width: 80px;
+  margin-left: 20px;
+  background-color: #14293e;
+  padding: 10px 10px;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 120px;
+}
+
+.delete-btn {
+  position: absolute;
+  left: 280px;
+  width: 80px;
+  background-color: #14293e;
+  padding: 10px 10px;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+}
+  
 .btn a {
   color: #fff;
 }
+.show-btn a {
+  color: #fff;
+}
+.edit-btn a {
+  color: #fff;
+}
 
-
+.delete-btn a {
+  color: #fff;
+}
 .tweet-form {
   width: 800px;
   height: 500px;

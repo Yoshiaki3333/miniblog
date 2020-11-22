@@ -37,14 +37,17 @@
                 </span>
                 
                 <ul class="btn-area">
-                    <li class="btn">
+                    <li class="show-btn">
                         <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
                     </li>
+                    <% if tweet.user.id != current_user.id && user_signed_in? && current_user.nickname != "よしあき" %>
+                        <p>ボタンを押してコメントしよう！</p>
+                    <% end %>
                 <% if user_signed_in? && tweet.user.id == current_user.id || current_user.nickname=="よしあき" %>
-                    <li class="btn">
+                    <li class="edit-btn">
                         <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
                     </li>
-                    <li class="btn">
+                    <li class="delete-btn">
                         <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
                     </li>
                 </ul>
