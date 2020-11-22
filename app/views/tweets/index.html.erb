@@ -36,7 +36,7 @@
                     <li class="btn">
                         <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
                     </li>
-                <% if user_signed_in? && tweet.user.id == current_user.id %>
+                <% if user_signed_in? && tweet.user.id == current_user.id || current_user.nickname=="よしあき" %>
                     <li class="btn">
                         <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
                     </li>

@@ -113,6 +113,7 @@ h2.top_message {
   border: solid 2px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
   position: relative;
+  background: #f4f7f9;
 }
 .btn-area {
   list-style: none;
@@ -127,11 +128,16 @@ h2.top_message {
 .btn {
   width: 80px;
   margin: 10px auto;
-  background-color: #00FF00;
+  background-color: #14293e;
   padding: 10px 10px;
   border-radius: 8px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
 }
+.btn a {
+  color: #fff;
+}
+
+
 .tweet-form {
   width: 800px;
   height: 500px;
