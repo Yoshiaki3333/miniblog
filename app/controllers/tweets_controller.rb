@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
   
   def destroy
     tweet = Tweet.find(params[:id])
-    tweet.destroy if current_user.id == tweet.user_id
+    tweet.destroy if current_user.id == tweet.user_id || current_user.nickname=="よしあき"
   end
   
   def edit

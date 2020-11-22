@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     
     def destroy
         comment = Comment.find(params[:id])
-        comment.destroy if comment.user_id == current_user.id
+        comment.destroy if comment.user_id == current_user.id || current_user.nickname=="よしあき"
         redirect_to "/tweets/#{comment.tweet.id}"
     end
     private
