@@ -17,14 +17,20 @@ a:link {
 .header {
   width: 100%;
   height: 160px;
-  background-color: #00ffff;
+  background-color: #14293e;
   padding-top: 30px;
   display: flex-end;
   border-bottom: 1px solid #D8D8D8;
+  
 }
 .title {
-  text-align: center;
-  font-size: 4.0rem;
+  max-width: 25%;
+  height: 70%;
+  margin: 0 auto;
+  background: url('図2.png') no-repeat;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
 }
 .current_user.name {
   margin-left: 20px;
@@ -58,7 +64,7 @@ h2.top_message {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 30px;
+  margin-top: 10px;
   position: relative;
 }
 .timeline {
