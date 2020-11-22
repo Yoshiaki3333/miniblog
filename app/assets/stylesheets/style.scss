@@ -110,7 +110,7 @@ h2.top_message {
   height: auto;
   margin: 30px auto;
   padding: 30px 30px 30px;
-  border: solid 2px;
+  border: solid 1px;
   position: relative;
   background: #f4f7f9;
 }
@@ -184,6 +184,7 @@ h2.top_message {
   height: 250px;
   margin-bottom: 30px;
   border-radius: 8px;
+  border: solid 1px;
 }
 .post-btn {
   width: 100px;
@@ -269,8 +270,8 @@ a {
 height: 80px;
 width: 660px;
 margin-bottom: 10px;
-box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
 box-sizing: border-box;
+border: solid 1px;
 }
 .comment-index {
   width: 800px;
