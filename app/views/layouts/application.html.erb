@@ -15,11 +15,11 @@
       <% if user_signed_in? %>
         <div class="current_user name">
           <strong><%= current_user.nickname %>さん</strong>
-        </div> <li class="timeline">
+        </div> 
+      <ul class="user_menu">
+        <li class="timeline">
           <%= link_to 'タイムライン', "/tweets", method: :get %> 
         </li>
-      <ul class="user_menu">
-       
         <li class="menu_btn">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </li>
