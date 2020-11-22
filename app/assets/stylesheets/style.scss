@@ -111,7 +111,6 @@ h2.top_message {
   margin: 30px auto;
   padding: 30px 30px 30px;
   border: solid 2px;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
   position: relative;
   background: #f4f7f9;
 }
@@ -130,7 +129,7 @@ h2.top_message {
   position: absolute;
   left: 0;
   width: 80px;
-  background-color: #14293e;
+  background-color: #0699e3;
   padding: 10px 10px;
   border-radius: 8px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
@@ -184,6 +183,7 @@ h2.top_message {
   width: 800px;
   height: 250px;
   margin-bottom: 30px;
+  border-radius: 8px;
 }
 .post-btn {
   width: 100px;
@@ -196,10 +196,14 @@ h2.top_message {
   margin: 40px auto;
   text-align: center;
   border: 2px solid;
+  border-color: #0699e3;
   width: 200px;
-  background-color: #CCFF99;
+  background-color: #0699e3;
   border-radius: 8px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+}
+.after-tweet a {
+  color: #fff;
 }
 /*user information START */ 
 .user_info_box {
@@ -215,14 +219,19 @@ text-align: center;
 }
 .actions {
   text-align: center;
+  margin-top: 20px;
 }
 
 form input {
   width: 50%;
   margin: 5px 15px;
   padding: 10px;
+  border-radius: 8px;
 }
 form input[type="submit"] {
+  background: #14293e;
+  color: #fff;
+  border-radius: 8px;
 }
 form input[type="checkbox" i] {
   
@@ -266,6 +275,7 @@ box-sizing: border-box;
 .comment-index {
   width: 800px;
   margin: 10px auto;
+  border-radius: 8px;
 }
 /*Comment END*/ 
 /**/ 

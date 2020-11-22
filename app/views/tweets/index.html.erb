@@ -16,9 +16,9 @@
             <div class="tweet-box">
                 <%= simple_format(tweet.text) %>
                 <% if tweet.comments && tweet.comments.count != 0  %>
-                    <a href="/tweets/<%= tweet.id %>">
+                    <<<a href="/tweets/<%= tweet.id %>">
                         <strong><%= tweet.comments.count %>件</strong>
-                    </a>のコメント
+                    </a>のコメント >>
                 <% elsif tweet.comments.count == 0 && tweet.user.id != current_user.id %>
                     ※コメントをしてみよう！
                 <% end %>
