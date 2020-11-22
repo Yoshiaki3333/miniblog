@@ -82,7 +82,7 @@ h2.top_message {
   border-radius: 4px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
   position: absolute;
-  left: 380px;
+  left: 10px;
 }
 .timeline a {
   color: #000000;
@@ -239,8 +239,11 @@ box-sizing: border-box;
 /**/ 
 .footer {
   width: 100%;
-  height: 200px;
+  height: 50px;
+  padding: 10px auto;
   text-align: center;
+  background: #14293e;
+  color: #fff;
   position: absolute;
   bottom: 0;
 }
