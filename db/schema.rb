@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2020_11_24_222224) do
   end
 
   create_table "timelines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "content_id"
-    t.integer "content_type"
+    t.integer "timelineable_id"
+    t.string "timelineable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
