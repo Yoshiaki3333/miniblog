@@ -1,5 +1,6 @@
             <div class="tweet-box">
                 <%= simple_format(tweet.text) %>
+                <div class="comment-announce">
                 <% if tweet.comments && tweet.comments.count != 0  %>
                     <<<a href="/tweets/<%= tweet.id %>">
                         <strong><%= tweet.comments.count %>件</strong>
@@ -7,7 +8,7 @@
                 <% elsif tweet.comments.count == 0 && tweet.user.id != current_user.id %>
                     ●詳細ボタンでコメントをしてみよう！
                 <% end %>
-                
+                </div>
                  <span class="name">
                     <p><<投稿者>></p>
                     <strong>
@@ -17,7 +18,7 @@
                     </strong>
                     <div class="created_at">
                         <p></p>
-                        <%= tweet.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+                        <%= tweet.updated_at.strftime("%Y-%m-%d %H:%M") %>
                     </div>
                 </span>
                 

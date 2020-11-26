@@ -1,0 +1,22 @@
+    <% if comment.tweet.present? %>
+        <div class="tweet-box">
+            <% if comment.tweet.present? %>
+           　    <% if comment.user.id != current_user.id %>
+                    <strong><<お知らせ>></strong>
+                        <strong><a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a></strong>
+                        さんのツイート
+                        <strong><a href="/tweets/<%= comment.tweet.id %>"><%= comment.tweet.text %></a></strong>
+                        に<strong><a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a></strong>さんがコメントしました。
+    
+                            <%= simple_format(comment.updated_at.strftime("%Y-%m-%d %H:%M")) %>
+            　
+            　  <% else %>
+                    <strong><<お知らせ>></strong>
+            　        <strong><a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a></strong>
+            　        さんの ツイート<strong><a href="/tweets/<%= comment.tweet.id %>"><%= comment.tweet.text %></a></strong>
+                    にあなたがコメントしました。<%= simple_format(comment.updated_at.strftime("%Y-%m-%d %H:%M")) %>
+                    <%= link_to 'お知らせの削除', "/tweets/#{comment.tweet.id}", method: :delete %>
+            　  <% end %>
+            <% end %>
+        </div>
+    <% end %>

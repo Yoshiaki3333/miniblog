@@ -12,7 +12,6 @@
                 </ul>
             </nav>
         <% else %>
-        <%= render partial: "tweets/tweet", collection: @tweet %>
-        <%= paginate(@tweets) %>
+        <%= render @timelines %>
         <% end %>
 </div>
