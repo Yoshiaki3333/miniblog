@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_003744) do
+ActiveRecord::Schema.define(version: 2020_11_24_222224) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tweet_id"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 2020_11_20_003744) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_installs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+  end
+
+  create_table "timelines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "timelineable_id"
+    t.string "timelineable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

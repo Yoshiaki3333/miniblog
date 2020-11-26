@@ -1,0 +1,17 @@
+ <div class="tweet-area">
+        <% unless user_signed_in? %>
+            <h2 class="top_message">ようこそ！早速登録して投稿してみよう</h2>
+            <nav class="global-nav">
+                <ul>
+                    <li class="menu_btn_top">
+                      <%= link_to 'ログイン', new_user_session_path, method: :get %>
+                    </li>
+                    <li class="menu_btn_top">
+                         <%= link_to '新規登録', new_user_registration_path, method: :get %>
+                    </li>
+                </ul>
+            </nav>
+        <% else %>
+        <%= render @timelines %>
+        <% end %>
+</div>
